@@ -1,0 +1,24 @@
+<div class="main-container" nz-row>
+  <div
+    class="left-container"
+    nz-col
+    nz-resizable
+    (nzResize)="onResize($event)"
+    [nzMinColumn]="3"
+    [nzMaxColumn]="20"
+    [nzGridColumnCount]="24"
+    [nzSpan]="col"
+  >
+    <div class="action-panel">
+      <button style="float: right;" nz-button nzSize="small" nzType="primary" (click)="update()">更新</button>
+    </div>
+    <app-code-editor class="editor" [(ngModel)]="code" [nzEditorOption]="{ language: 'json', minimap: { enabled: false } }"></app-code-editor>
+    <nz-resize-handles [nzDirections]="['right']"></nz-resize-handles>
+  </div>
+  <div class="right-container" nz-col [nzSpan]="24 - col">
+    <form [formGroup]="form">
+      <qf-form [form]="form" [fields]="fields"></qf-form>
+    </form>
+    <button nz-button nzType="primary" (click)="log()">查看数据</button>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<article style="padding: 16px" nz-typography>
+  <h3 nz-title>公式联动</h3>
+  <p nz-paragraph>
+    支持字段间的公式联动，通过简单的公式字符串配置，支持目前主流的excel函数，包括且不仅限于以下函数
+  </p>
+  <article nz-typography>
+    <ul>
+      <li>IF (根据判断条件，返回正确或错误的值)</li>
+      <li>SUM (返回所有参与字段中数值的总和)</li>
+      <li>CONCAT (字符串连接函数，连接函数中的所有字段)</li>
+      <li>ROUND (将数字四舍五入到指定的位数)</li>
+      <li>CURDATE (返回当前日期)</li>
+      <li>TEXT (将日期字段格式化为目标格式或把其他字段转换为文本类型)</li>
+      <li><a href="https://github.com/QingFlow/FormulaCalculator" target="_blank">更多请戳这里👈</a></li>
+    </ul>
+  </article>
+</article>
+<nz-divider style="margin-bottom: 0"></nz-divider>
+<app-demo [form]="form"
+  [fields]="fields"></app-demo>

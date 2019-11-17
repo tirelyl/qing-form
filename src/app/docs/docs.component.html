@@ -1,0 +1,159 @@
+<h1 id="qingform">QingForm 📃</h1>
+<p>QingForm 是一个用于 Angular 动态创建表单的库，JSON配置，支持字段间的灵活联动</p>
+<h2 id="">如何使用</h2>
+<ol>
+<li>安装 qing-form</li>
+</ol>
+<pre><code class="bash language-bash">npm install qing-form --save
+</code></pre>
+<ol>
+<li>导入 QingFormModule</li>
+</ol>
+<pre><code class="ts language-ts">import &#123; NgModule } from '@angular/core';
+import &#123; QingFormModule } from 'qing-form';
+
+@NgModule(&#123;
+  imports: [
+    ...,
+    QingFormModule,
+  ]
+})
+export class ShareModule &#123; }
+</code></pre>
+<ol>
+<li>在组件中使用JSON来配置表单</li>
+</ol>
+<pre><code class="ts language-ts">import &#123; Component, OnInit } from '@angular/core';
+import &#123; FormGroup } from '@angular/forms';
+import &#123; QfFieldConfig } from 'qing-form';
+
+@Component(&#123;
+  selector: 'app',
+  template: `
+    &lt;form [formGroup]="form"&gt;
+      &lt;qf-form [form]="form" [fields]="fields"&gt;&lt;/qf-form&gt;
+    &lt;/form&gt;
+  `
+})
+export class AppComponent &#123;
+  form = new FormGroup(&#123;});
+  fields: QfFieldConfig[] = [
+    &#123;
+      key: '1',
+      type: 'input',
+      templateOptions: &#123;
+        label: '输入框',
+        placeholder: '我是提示'
+      }
+    }
+  ];
+}
+</code></pre>
+<h2 id="api">API</h2>
+<pre><code class="html language-html">&lt;qf-form [form]="form" [fields]="fields"&gt;&lt;/qf-form&gt;
+</code></pre>
+<h3 id="qfform">qf-form</h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[form]</code></td>
+<td>当前表单的 FormGroup 实例</td>
+<td><code>Array&lt;TemplateRef&lt;void&gt;&gt;</code></td>
+<td><code>new FormGroup(&#123;})</code></td>
+</tr>
+<tr>
+<td><code>fields</code></td>
+<td>每一个表单控件的配置信息</td>
+<td><code>QfFieldConfig</code></td>
+<td><code>[]</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="qffieldconfig">QfFieldConfig</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+<th>类型</th>
+<th>必填</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>key</code></td>
+<td>表单控件的唯一key，于 FormGroup 中的 key 对应</td>
+<td><code>string</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>表单控件类型</td>
+<td><code>'input' | 'date' | 'radio' | 'checkbox'</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>templateOptions</code></td>
+<td>给控件设置交互相关的信息</td>
+<td><code>QfTemplateOptions</code></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="qftemplateoptions">QfTemplateOptions</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+<th>类型</th>
+<th>必填</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>label</code></td>
+<td>控件标题</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>placeholder</code></td>
+<td>控件默认文字</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>defaultValue</code></td>
+<td>控件默认值</td>
+<td><code>any</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>options</code></td>
+<td>选择类型控件选项</td>
+<td><code>Array&lt;&#123; label: string; value: string; checked?: boolean; }&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>valueType</code></td>
+<td>控件值联动类型</td>
+<td><code>'string' | 'formula' | 'custom'</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>formula</code></td>
+<td>联动值类型为 formula 时，需要计算的公式</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>

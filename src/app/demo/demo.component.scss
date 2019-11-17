@@ -1,0 +1,25 @@
+.main-container {
+  height: 100%;
+}
+
+.left-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-right: 1px solid #eeeef2;
+
+  .action-panel {
+    padding: 4px 8px;
+    background: #fff;
+    border-bottom: 1px solid #eeeef2;
+  }
+
+  .editor {
+    flex: 1;
+  }
+}
+
+.right-container {
+  height: 100%;
+  padding: 16px;
+}

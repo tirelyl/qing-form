@@ -1,0 +1,49 @@
+<!-- <form [formGroup]="form">
+  <qf-form [form]="form" [fields]="fields"></qf-form>
+</form>
+<button (click)="test()">test</button>
+
+<form [formGroup]="formulaForm">
+  <qf-form [form]="formulaForm" [fields]="formulaFields"></qf-form>
+</form> -->
+<nz-layout class="layout">
+  <nz-sider
+    nzCollapsible
+    [(nzCollapsed)]="isCollapsed"
+    [nzBreakpoint]="'lg'"
+    [nzCollapsedWidth]="0"
+    [nzZeroTrigger]="zeroTrigger"
+  >
+    <div class="logo"></div>
+    <ul class="side-menu" nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+      <li nz-menu-item routerLink="/docs" routerLinkActive="ant-menu-item-selected">
+        <span>💡 </span>
+        <span>文档</span>
+      </li>
+      <li nz-menu-item routerLink="/basic" routerLinkActive="ant-menu-item-selected">
+        <span>🚤 </span>
+        <span>基础用法</span>
+      </li>
+      <li nz-menu-item routerLink="/formula" routerLinkActive="ant-menu-item-selected">
+        <span>🚗 </span>
+        <span>公式</span>
+      </li>
+      <li nz-menu-item>
+        <span>🚀 </span>
+        <span>自定义</span>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header></nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+    <nz-footer>Powered by tirelyl ©2019</nz-footer>
+  </nz-layout>
+</nz-layout>
+<ng-template #zeroTrigger>
+  <i nz-icon nzType="menu-fold" nzTheme="outline"></i>
+</ng-template>
