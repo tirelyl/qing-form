@@ -20,6 +20,7 @@
     "@angular/platform-browser": "~8.2.11",
     "@angular/platform-browser-dynamic": "~8.2.11",
     "@angular/router": "~8.2.11",
+    "angular-cli-ghpages": "^0.6.0",
     "formula-calculator": "^0.1.58",
     "monaco-editor": "^0.18.1",
     "ng-zorro-antd": "^8.5.0",
