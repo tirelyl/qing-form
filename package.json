@@ -4,10 +4,11 @@
   "scripts": {
     "lib:build": "ng build qing-form",
     "start": "npm run generate-doc && ng serve qing-form-doc --port=5200 --open=true",
+    "generate-doc": "node scripts/generate-doc.js",
+    "site:build": "npm run lib:build && ng build qing-form-doc --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "generate-doc": "node scripts/generate-doc.js"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
