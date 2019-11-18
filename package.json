@@ -6,7 +6,7 @@
     "start": "npm run generate-doc && ng serve qing-form-doc --port=5200 --open=true",
     "generate-doc": "node scripts/generate-doc.js",
     "site:build": "npm run lib:build && ng build qing-form-doc --prod",
-    "deploy": "ng deploy qing-form-doc --base-href=/qing-form/",
+    "deploy": "npm run lib:build && ng deploy qing-form-doc --base-href=/qing-form/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
