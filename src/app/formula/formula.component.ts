@@ -35,6 +35,34 @@ export class FormulaComponent implements OnInit {
         valueType: 'formula',
         formula: 'SUM(#1$ + #2$)'
       }
+    },
+    {
+      key: '4',
+      type: 'input',
+      templateOptions: {
+        label: '得分',
+        placeholder: '请输入'
+      }
+    },
+    {
+      key: '5',
+      type: 'input',
+      templateOptions: {
+        label: '等级',
+        placeholder: '请输入',
+        valueType: 'formula',
+        formula: 'IF(#4$ >= 60, "及格", "不及格")'
+      }
+    },
+    {
+      key: '6',
+      type: 'input',
+      templateOptions: {
+        label: '反馈',
+        placeholder: '请输入',
+        valueType: 'formula',
+        formula: 'CONCAT("你的得分是", #4$, IF(#4$ >= 60, "，已通过", "，请继续努力"))'
+      }
     }
   ];
 

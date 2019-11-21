@@ -1,0 +1,5 @@
+<nz-radio-group [formControl]="formControl">
+  <ng-container *ngFor="let option of options">
+    <label nz-radio [nzValue]="option.value">{{ option.label }}</label>
+  </ng-container>
+</nz-radio-group>

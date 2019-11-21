@@ -20,7 +20,7 @@
     ],
     "paths": {
       "qing-form": [
-        "dist/qing-form"
+        "projects/qing-form/src/public-api"
       ]
     }
   },

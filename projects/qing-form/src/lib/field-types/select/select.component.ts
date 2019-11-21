@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { QfFieldTypeComponent } from '../../definitions/field-type.component';
 
 @Component({
-  selector: 'qf-input',
-  templateUrl: './input.component.html'
+  selector: 'qf-select',
+  templateUrl: './select.component.html'
 })
-export class InputComponent extends QfFieldTypeComponent implements OnInit {
+export class SelectComponent extends QfFieldTypeComponent implements OnInit {
 
   ngOnInit() {
   }
+
 }

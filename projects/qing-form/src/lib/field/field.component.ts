@@ -11,7 +11,7 @@ import {
   SimpleChanges,
   OnDestroy
 } from '@angular/core';
-import { QfFieldConfig, QfFieldType } from '../definitions/field-config';
+import { QfFieldConfig } from '../definitions/field-config';
 import { QfFieldTypesMap } from '../definitions/field-types-map';
 import { QfBaseFieldTypesMap } from '../field-types/base-field-map';
 

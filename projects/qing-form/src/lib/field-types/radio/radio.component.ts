@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { QfFieldTypeComponent } from '../../definitions/field-type.component';
 
 @Component({
-  selector: 'qf-input',
-  templateUrl: './input.component.html'
+  selector: 'qf-radio',
+  templateUrl: './radio.component.html'
 })
-export class InputComponent extends QfFieldTypeComponent implements OnInit {
+export class RadioComponent extends QfFieldTypeComponent implements OnInit {
 
   ngOnInit() {
   }
+
 }

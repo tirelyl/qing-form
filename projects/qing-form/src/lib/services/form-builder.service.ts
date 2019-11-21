@@ -15,7 +15,7 @@ export class QfFormBuilderService {
   private registerControl(form: FormGroup, fieldConfig: QfFieldConfig): void {
     const { key, templateOptions } = fieldConfig;
     const { defaultValue, options } = templateOptions;
-    const control = new FormControl(defaultValue || options);
+    const control = new FormControl(defaultValue);
     fieldConfig.formControl = control;
     form.registerControl(key, control);
   }

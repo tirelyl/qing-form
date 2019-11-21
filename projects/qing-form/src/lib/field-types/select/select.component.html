@@ -1,0 +1,5 @@
+<nz-select [formControl]="formControl" [nzPlaceHolder]="placeholder" nzAllowClear>
+  <ng-container *ngFor="let option of options">
+    <nz-option [nzValue]="option.value" [nzLabel]="option.label"></nz-option>
+  </ng-container>
+</nz-select>

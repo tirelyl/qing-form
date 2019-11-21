@@ -12,4 +12,8 @@ export abstract class QfFieldTypeComponent {
   get placeholder(): string {
     return this.field.templateOptions ? (this.field.templateOptions.placeholder || '') : '';
   }
+
+  get options(): Array<{ label: string; value: string; }> {
+    return this.field.templateOptions ? (this.field.templateOptions.options || []) : [];
+  }
 }

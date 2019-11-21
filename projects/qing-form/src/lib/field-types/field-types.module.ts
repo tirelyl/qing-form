@@ -6,6 +6,17 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 // components
 import { InputComponent } from './input/input.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
+import { DateComponent } from './date/date.component';
+import { RadioComponent } from './radio/radio.component';
+import { SelectComponent } from './select/select.component';
+
+const COMPONENTS = [
+  InputComponent,
+  CheckboxComponent,
+  DateComponent,
+  RadioComponent,
+  SelectComponent
+];
 
 @NgModule({
   imports: [
@@ -15,16 +26,13 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
     FormsModule
   ],
   declarations: [
-    InputComponent,
-    CheckboxComponent
+    ...COMPONENTS
   ],
   entryComponents: [
-    InputComponent,
-    CheckboxComponent
+    ...COMPONENTS
   ],
   exports: [
-    InputComponent,
-    CheckboxComponent
+    ...COMPONENTS
   ]
 })
 export class FieldTypesModule {}

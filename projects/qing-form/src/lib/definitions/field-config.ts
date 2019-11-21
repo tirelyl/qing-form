@@ -1,6 +1,6 @@
 import { AbstractControl } from '@angular/forms';
 
-export type QfFieldType = 'input' | 'textarea' | 'date' | 'radio' | 'checkbox';
+export type QfFieldType = 'input' | 'select' | 'date' | 'radio' | 'checkbox';
 
 export interface QfFieldConfig {
   key: string;
