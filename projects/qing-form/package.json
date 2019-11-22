@@ -1,6 +1,10 @@
 {
   "name": "qing-form",
   "version": "0.0.1",
+  "dependencies": {
+    "ng-zorro-antd": "^8.5.0",
+    "formula-calculator": "^0.1.58"
+  },
   "peerDependencies": {
     "@angular/common": "^8.2.11",
     "@angular/core": "^8.2.11"

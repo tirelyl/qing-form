@@ -7,5 +7,8 @@
       "ng-zorro-antd": "ngZorroAntd",
       "formula-calculator": "formulaCalculator"
     }
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "tslib", "angular", "ng-zorro-antd", "formula-calculator"
+  ]
 }
