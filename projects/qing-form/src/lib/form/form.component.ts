@@ -3,7 +3,7 @@ import { QfFieldConfig } from '../definitions/field-config';
 import { FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { QfFormBuilderService } from '../services/form-builder.service';
-import { getFormulaTriggerKeys, calculateFormula } from '../utils';
+import { getTriggerKeys, calculateFormula, getFieldVisible } from '../utils';
 
 @Component({
   selector: 'qf-form',
@@ -39,16 +39,22 @@ export class QfFormComponent implements OnInit, OnChanges, OnDestroy {
   private setTriggerMap(): void {
     this.fields.forEach(field => {
       const { templateOptions } = field;
-      const { formula } = templateOptions;
-      if (formula) {
-        const triggerKeys = getFormulaTriggerKeys(formula, this.fields);
-        triggerKeys.forEach(key => {
-          if (!this.triggerMap.has(key)) {
-            this.triggerMap.set(key, []);
-          }
-          this.triggerMap.get(key).push(field);
-        });
+      const { formulaExpression, visibleExpression } = templateOptions;
+      [ formulaExpression, visibleExpression ].forEach(expression => {
+        if (expression) {
+          this.parseExpression(expression, field);
+        }
+      });
+    });
+  }
+
+  private parseExpression(expression: string, field: QfFieldConfig): void {
+    const triggerKeys = getTriggerKeys(expression);
+    triggerKeys.forEach(key => {
+      if (!this.triggerMap.has(key)) {
+        this.triggerMap.set(key, []);
       }
+      this.triggerMap.get(key).push(field);
     });
   }
 
@@ -67,10 +73,14 @@ export class QfFormComponent implements OnInit, OnChanges, OnDestroy {
   private handleTrigger(targetFields: QfFieldConfig[]): void {
     targetFields.forEach(field => {
       const { key, templateOptions } = field;
-      const { valueType, formula } = templateOptions;
+      const { valueType, formulaExpression, visibleExpression } = templateOptions;
       if (valueType === 'formula') {
-        const calcValue = calculateFormula(formula, this.form);
+        const calcValue = calculateFormula(formulaExpression, this.form);
         this.form.get(key).setValue(calcValue);
+      }
+      if (visibleExpression) {
+        const visible = getFieldVisible(visibleExpression, this.form);
+        field.visible = visible;
       }
     });
   }

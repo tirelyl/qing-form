@@ -33,7 +33,7 @@ export class FormulaComponent implements OnInit {
         label: '求和',
         placeholder: '请输入',
         valueType: 'formula',
-        formula: 'SUM(#1$ + #2$)'
+        formulaExpression: 'SUM(#1$ + #2$)'
       }
     },
     {
@@ -51,7 +51,7 @@ export class FormulaComponent implements OnInit {
         label: '等级',
         placeholder: '请输入',
         valueType: 'formula',
-        formula: 'IF(#4$ >= 60, "及格", "不及格")'
+        formulaExpression: 'IF(#4$ >= 60, "及格", "不及格")'
       }
     },
     {
@@ -61,7 +61,7 @@ export class FormulaComponent implements OnInit {
         label: '反馈',
         placeholder: '请输入',
         valueType: 'formula',
-        formula: 'CONCAT("你的得分是", #4$, IF(#4$ >= 60, "，已通过", "，请继续努力"))'
+        formulaExpression: 'CONCAT("你的得分是", #4$, IF(#4$ >= 60, "，已通过", "，请继续努力"))'
       }
     }
   ];

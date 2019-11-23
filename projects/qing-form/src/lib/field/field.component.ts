@@ -18,7 +18,10 @@ import { QfBaseFieldTypesMap } from '../field-types/base-field-map';
 @Component({
   selector: 'qf-field',
   templateUrl: './field.component.html',
-  styleUrls: ['./field.component.scss']
+  styleUrls: ['./field.component.scss'],
+  host: {
+    '[style.display]': 'field.visible ? "" : "none"'
+  }
 })
 export class QfFieldComponent implements OnInit, OnChanges, OnDestroy {
   fieldTypesMap: QfFieldTypesMap;

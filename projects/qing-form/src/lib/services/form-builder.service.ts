@@ -8,13 +8,18 @@ export class QfFormBuilderService {
 
   buildForm(form: FormGroup, fields: QfFieldConfig[]): void {
     fields.forEach(fieldConfig => {
+      this.handleDefualtPorps(fieldConfig);
       this.registerControl(form, fieldConfig);
     });
   }
 
+  private handleDefualtPorps(fieldConfig: QfFieldConfig): void {
+    fieldConfig.visible = fieldConfig.visible !== undefined ? fieldConfig.visible : true;
+  }
+
   private registerControl(form: FormGroup, fieldConfig: QfFieldConfig): void {
     const { key, templateOptions } = fieldConfig;
-    const { defaultValue, options } = templateOptions;
+    const { defaultValue } = templateOptions;
     const control = new FormControl(defaultValue);
     fieldConfig.formControl = control;
     form.registerControl(key, control);

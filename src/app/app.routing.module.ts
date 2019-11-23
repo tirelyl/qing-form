@@ -19,6 +19,10 @@ export const routes: Routes = [
     loadChildren: () => import('./formula/formula.module').then(m => m.FormulaModule)
   },
   {
+    path: 'visible',
+    loadChildren: () => import('./visible/visible.module').then(m => m.VisibleModule)
+  },
+  {
     path: '**',
     pathMatch: 'full',
     redirectTo: '/docs'

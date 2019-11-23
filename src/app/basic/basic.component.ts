@@ -49,19 +49,6 @@ export class BasicComponent implements OnInit {
           { label: 'C', value: 'C' }
         ]
       }
-    },
-    {
-      key: '5',
-      type: 'select',
-      templateOptions: {
-        label: '选择器',
-        placeholder: '请选择',
-        options: [
-          { label: 'A', value: 'A' },
-          { label: 'B', value: 'B' },
-          { label: 'C', value: 'C' }
-        ]
-      }
     }
   ];
 

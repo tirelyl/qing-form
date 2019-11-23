@@ -1,5 +1,6 @@
 # QingForm 📃
 QingForm 是一个用于 Angular 动态创建表单的库，JSON配置，支持字段间的灵活联动
+GitHub 地址：[https://github.com/tirelyl/qing-form](https://github.com/tirelyl/qing-form)
 
 ## 如何使用
 
